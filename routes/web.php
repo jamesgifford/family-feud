@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/room/{room}', 'Ui\RoomController@show');
+
+Route::get('/', 'Ui\HomeController@index');

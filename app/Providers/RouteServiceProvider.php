@@ -23,9 +23,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        /**
+         * Route model binding for Room
+         */
+        Route::bind('room', function ($value) {
+            return Room::findOrFail(HashHelper::decodeKey($value)) ?? abort(404);
+        });
     }
 
     /**
