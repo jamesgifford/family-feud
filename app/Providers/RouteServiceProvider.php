@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Helpers\HashHelper;
+use App\Models\Room;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
