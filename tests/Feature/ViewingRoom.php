@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
+use App\Models\Room;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
@@ -12,9 +13,11 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function viewerCanViewRoom()
     {
-        $response = $this->get('/');
+        $room = factory(Room::class)->create();
+
+        $response = $this->get('/room/' . $room->hash_id);
 
         $response->assertStatus(200);
     }

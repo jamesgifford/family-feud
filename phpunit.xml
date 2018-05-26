@@ -17,6 +17,9 @@
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
+    <listeners>
+        <listener class="Tests\Listeners\DatabaseRefreshListener" file="./tests/Listeners/DatabaseRefreshListener.php"></listener>
+    </listeners>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>
